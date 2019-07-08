@@ -1,0 +1,20 @@
+<!--pages/voicePage/voicePage.wxml-->
+
+<view class="voiceView">
+  <view>
+    <view class='quest-t'>
+      <image src='../../img/yuav.png'></image>
+      <view class='zhaolai'  bindtouchstart="tapVoiceButton" bindtouchend="touchup">
+        <image wx-if='{{start}}' src='../../img/az.png'></image>
+        <image wx-if ='{{!start}}' src='../../img/yuyin.png'></image>
+      </view>
+    </view>
+    <view class='explose'>
+      <text>
+        .为了更好的识别垃圾分类
+        请用普通话说出垃圾的名字
+      </text>
+    </view>
+  </view>
+  <button bindtap="play" class='btn'>播放录音</button>
+</view>

@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='home-img '>
+    <image src='../../img/bj.png'></image>
+  </view>
+  <view class='home-main'>
+    <view class='h-t'>
+      <view class='h-t-t'>
+        查看排行说明
+      </view>
+      <view class='h-t-n'>
+        <image src='http://e.hiphotos.baidu.com/image/h%3D300/sign=a9e671b9a551f3dedcb2bf64a4eff0ec/4610b912c8fcc3cef70d70409845d688d53f20f7.jpg'></image>
+        <view>
+            <text></text>
+            <text>答题新秀[您已超过当前 50% 的人]</text>
+        </view>
+      </view>
+      <view class='h-t-f'>
+          <view>
+             累计答题:<text>1895</text>
+          </view>
+          <view>
+             正确率:<text>80%</text>
+          </view>
+          <view>
+             图片识别:<text>1895</text>次
+          </view>
+          <view>
+             语音识别:<text>1895</text>次
+          </view>
+      </view>
+
+    </view>
+    <view class='h-s-n' bindtap='seachInfo'>
+    <image src='../../img/seach.png'></image> 搜索
+    </view>
+    <view class='h-s-f'>
+      <view  bindtap='questInfo'>
+        <image src='../../img/th.png'></image>
+      </view>
+      <view bindtap='Imgshibie'>
+        <image src='../../img/ss.png'></image>
+      </view>
+      <view bindtap='yuyinShibie'>
+        <image src='../../img/yy.png'></image>
+      </view>
+      <view>
+        <image src='../../img/gg.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

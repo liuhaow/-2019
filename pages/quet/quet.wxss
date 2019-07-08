@@ -1,0 +1,110 @@
+/* pages/quet/quet.wxss */
+
+.quest {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* background: #8ed365; */
+  background: linear-gradient(0deg, #6e9a46 0%, #8ed365 100%);
+}
+
+.quest-t {
+  height: 670rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+.xuanzu {
+  width: 710rpx;
+  height: 670rpx;
+}
+
+.zhaolai {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-47%, -51%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 329rpx;
+  height: 329rpx;
+  background: rgba(243, 243, 243, 1);
+  border-radius: 50%;
+}
+
+.zhaolai image {
+  width: 245rpx;
+  height: 157rpx;
+}
+
+.dati {
+  margin-top: -50rpx;
+  text-align: center;
+  z-index: 55;
+}
+
+.dati view {
+  color: #fff;
+}
+
+.dati-t {
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  line-height: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.data-laji {
+  font-size: 38rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
+}
+
+.dati text {
+  color: #fff;
+}
+
+.choselist {
+  width: 45%;
+  display: flex;
+  height: 50rpx;
+  margin: 20rpx auto;
+  font-size: 36rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
+  letter-spacing: 3rpx;
+}
+
+.choselist image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.btnque {
+  width: 498rpx;
+  height: 81rpx;
+  line-height: 81rpx;
+  background: rgba(229, 254, 191, 1);
+  border-radius: 41rpx;
+  font-size: 36rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(53, 154, 47, 1);
+}

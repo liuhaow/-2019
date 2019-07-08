@@ -1,0 +1,12 @@
+
+<!--pages/scanPage/scanPage.wxml-->
+<view class="scanContainer">
+<view class='quest-t'>
+    <image src='../../img/yuav.png' mode="aspectFit" animation="{{animation}}"></image>
+    <view class='zhaolai' bindtap="imgBtnTap">
+      <image wx-if="{{tempFilePaths == ''}}" src='../../img/saosao.png'></image>
+      <image wx-if="{{tempFilePaths != ''}}" src='{{tempFilePaths}}'></image>
+
+    </view>
+  </view>
+</view>

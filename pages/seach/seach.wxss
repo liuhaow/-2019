@@ -1,0 +1,49 @@
+/* pages/seach/seach.wxss */
+
+.seach {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #8ed365;
+}
+
+.seach-t {
+  width: 648rpx;
+  height: 73rpx;
+  background: rgba(120, 195, 161, 0.5);
+  border: 2rpx solid rgba(196, 233, 136, 1);
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: #c4e988;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  border-radius: 36rpx;
+  margin: 0 auto 20rpx
+}
+
+.seach-t image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+.seach-t input{
+  height: 100%;
+  font-size: 30rpx;
+  color: #fff
+}
+.listin view{
+ height:90rpx;
+ line-height: 90rpx;
+ padding-left: 30rpx;
+ font-size: 30rpx;
+ color: #83c767
+}
+.listin view:nth-child(n){
+ background:rgba(231,245,221,1);
+}
+.listin view:nth-child(2n){
+ background:rgba(212,229,201,1);
+}

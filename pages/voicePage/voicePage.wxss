@@ -1,0 +1,52 @@
+/* pages/scanPage/scanPage.wxss */
+
+.voiceView {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, #6e9a46 0%, #8ed365 100%);
+}
+
+.quest-t {
+  height: 670rpx;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.quest-t image {
+  width: 710rpx;
+  height: 670rpx;
+}
+
+.zhaolai {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-48%, -51.5%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 329rpx;
+  height: 329rpx;
+  background: rgba(243, 243, 243, 1);
+  border-radius: 50%;
+}
+
+.zhaolai image {
+  width: 329rpx;
+  height: 329rpx;
+}
+
+.explose {
+  text-align: center;
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: rgba(248, 249, 252, 1);
+}

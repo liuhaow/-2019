@@ -1,0 +1,8 @@
+ <view class='logininfo'>
+    <view class='logininfo-img'>
+      <image src='../../img/fl.png' ></image>
+    </view>
+    <view class='logininfo-btn'>
+      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='butn'>一 键 登 录</button>
+    </view>
+  </view>
