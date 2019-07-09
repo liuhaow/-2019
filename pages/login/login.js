@@ -27,7 +27,7 @@ Page({
           console.log(res)
           if (res.code) {
             wx.request({
-              url: 'https://flowers.zemietx.com/public/index.php/api/user/do_login?imgUrl=' + f + '&nickname=' + a + '&code=' + res.code,
+              url: 'https://rubbish.zemietx.com/public/index.php/api/login/index?imgUrl=' + f + '&nickname=' + a + '&code=' + res.code,
               method: 'get',
               success: function (res) {
                 if (res.data.code == 1) {

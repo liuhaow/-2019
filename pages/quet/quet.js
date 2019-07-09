@@ -3,96 +3,94 @@ var _animationIndex
 const _ANIMATION_TIME = 500;
 Page({
   data: {
-    animation: '',
-    courinde:'4',
-    index:0,
-    flag:3,
-    sure:false,
-    anser:'',
-    list: [
-      {
-        question: "彩虹六号：围攻总共出了",
-        answers: ['A', 'B', 'C', 'D'],
-        right_answer: "C"
-      },
-      {
-        question: "截至风城行动，彩虹六号：",
-        answers: ['A', 'B', 'C', 'D'],
-        right_answer: "D"
-      },
-      {
-        question: "截围攻总共出了多少个特勤干员？",
-        answers: ['A', 'B', 'C', 'D'],
-
-        right_answer: "A"
-      },
-      {
-        question: "截？",
-        answers: ['A', 'B', 'C', 'D'],
-        right_answer: "C"
-      },
-      {
-        question: "截至员？",
-        answers: ['A', 'B', 'C', 'D'],
-        right_answer: "C"
-      }
-
-    ]
+    courinde: 10,
+    index: 0,
+    flag: 4,
+    sure: false,
+    tiku:'',
+    an_ser:'',
+    list: '',
   },
-
-  onShow: function() {
-
-  },
-  choseInfo(e){
+  onTabsItem(e){
     var that = this;
-    var anst= e.currentTarget.dataset.anser;
+    console.log(e)
+    var idx = e.currentTarget.dataset.index
+    var chose = e.currentTarget.dataset.tab
     that.setData({
-      anser: anst
+      courinde:idx,
+      an_ser: chose
     })
-  },
-  btnque(){
-    console.log(1215)
-    this.setData({
-      sure:true
-    })
-    var right_answer = this.data.list[this.data.index].right_answer;
-    console.log(right_answer)
-    console.log(this.data.anser)
-    if (this.data.anser == right_answer ){
-      console.log(this.data.list.length)
-      
 
-    }else{
-      console.log(2)
+  },
+  onShow: function() {
+    var that = this
+    let Token = wx.getStorageSync('token')
+
+    wx.request({
+      url: 'https://rubbish.zemietx.com/public/index.php/api/itembank/primary?token=' + Token+'&page=1&p=1&type=1',
+      method: 'GET',
+      dataType: 'json',
+      success: function(res) {
+        console.log(res)
+        if(res.data.code == 1 ){
+            that.setData({
+              tiku:res.data.data[0]
+            })
+        }
+      },
+      fail: function(res) {},
+    })
+    if (that.data.list == ''){
+      wx.request({
+        url: 'http://rubbish.zemietx.com/public/index.php/api/itembank/common?token=' + Token,
+        method: 'get',
+        success: function (res) {
+          if (res.data.code == 1) {
+            var list = that.data.list;
+            console.log(list)
+            that.setData({
+              list: res.data.data.answer
+            })
+            console.log(that.data.list)
+          }
+
+        },
+        fail: function (res) { }
+      })
+    }
+  },
+  btnque(e){
+    var that = this;
+    let Token = wx.getStorageSync('token')
+    if (that.data.an_ser == ''){
+      wx.showToast({
+        title: '要选择一个'
+      })
       return
+    }
+    var sub = e.currentTarget.dataset.id;
+    var anser = that.data.an_ser;
+    var uniqueid = e.currentTarget.dataset.uniqueid;
+    wx.request({
+      url: 'http://rubbish.zemietx.com/public/index.php/api/itembank/judge?token=' + Token + '&subject=' + sub + '&answer=' + anser + '&uniqueid=' + uniqueid,
+      method: 'GET',
+      dataType: 'json',
+      success: function (res) {
+        console.log(res)
+        if (res.data.code == 1) {
+          that.setData({
 
-    }
-    if (this.data.index < this.data.list.length - 1) {
-      this.NextQuestion();
-    }
-    //最后一道题
-    else if (this.data.index == this.data.questionnum - 1) {
-      this.setData({
-        canAnswer: 'true'//禁止答题
-      })
-    }
-  },
-  NextQuestion: function () {
-    //不是最后一道题
-    if (this.data.index < this.data.list.length - 1) {
-      this.setData({
-        index: this.data.index + 1,
-      })
-    }
-    //最后一道题
-    if (this.data.index == this.data.list.length - 1) {
-      this.setData({
-        index: this.data.index,
-      })
-    }
-  },
+          })
+        } else if (res.data.code == 0){
+          
+        }
+      },
+      fail: function (res) { },
+    })
 
-  
+  }
+
+
 
 
 

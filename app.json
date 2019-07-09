@@ -2,7 +2,7 @@
   "pages": [
     "pages/quet/quet",
     
-    "pages/index/index",
+    "pages/index/index",    
     "pages/scanPage/scanPage",
     "pages/voicePage/voicePage",
     "pages/seach/seach",

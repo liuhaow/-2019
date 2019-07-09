@@ -38,25 +38,20 @@
   <view class='quest-t'>
     <image class='xuanzu' src='../../img/yuav.png'></image>
     <view class='zhaolai'>
-      <image src='http://img0.imgtn.bdimg.com/it/u=4060989087,4275809491&fm=26&gp=0.jpg'></image>
+      <image src='{{tiku.img}}'></image>
     </view>
   </view>
   <view class='dati'>
     <view class='dati-t'>
       <text>{{index+1}}</text>/5 [初级]</view>
-    <text class='data-laji'>{{list[index].question}}</text>
-    <view wx:for='{{list[index].answers}}' wx:key='{{index}}' data-anser='{{item}}' bindtap='choseInfo'>
-      {{item}}
-      <!-- <image src='../../img/chose.png' wx-if='{{courinde != index}}'></image>
-        <image src='../../img/chosse.png' wx-if='{{courinde == index}}'></image> -->
-    </view>
-    <!-- <block wx:for='{{list}}' wx:key='{{index}}'>
-      <view bindtap='onTabsItem' data-index='{{index}}' class='choselist'>
+    <text class='data-laji'>图片上是什么类型的垃圾?</text>
+    <block wx:for='{{list}}' wx:key='{{index}}' bindtap='choseInfo' >
+      <view bindtap='onTabsItem' data-index='{{index}}' class='choselist' data-tab='{{item.tab}}'>
         <image src='../../img/chose.png' wx-if='{{courinde != index}}'></image>
         <image src='../../img/chosse.png' wx-if='{{courinde == index}}'></image>
         {{item.name}}
       </view>
-    </block> -->
+    </block>
   </view>
-  <button class='btnque' bindtap='btnque'>确定</button>
+  <button class='btnque' bindtap='btnque' data-id='{{tiku.id}}' data-uniqueid='{{tiku.uniqueid}}'>确定</button>
 </view>

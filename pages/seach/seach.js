@@ -5,9 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-      list:100
+      list:[],
+      inputd:''
   },
+  getInput(e){
+    var that = this;
+    let Token = wx.getStorageSync('token');
+    var key = e.detail.value;
+    that.setData({
+      inputd: key
+    })
+    if (that.data.inputd == '') return
+    wx.request({
+      url: 'https://rubbish.zemietx.com/public/index.php/api/index/search',
+      method: 'post',
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
+        token: Token,
+        key: that.data.inputd 
+      },
+      success: function (res) {
+        if (res.data.code == 1) {
+          var list = that.data.list;
+          console.log(list)
+          that.setData({
+            list:res.data.data
+          })
+console.log(that.data.list)
+        }
 
+      },
+      fail: function (res) { }
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */

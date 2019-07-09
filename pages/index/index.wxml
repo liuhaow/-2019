@@ -5,28 +5,28 @@
   </view>
   <view class='home-main'>
     <view class='h-t'>
-      <view class='h-t-t'>
+      <view class='h-t-t' bindtap='checketPH'>
         查看排行说明
       </view>
       <view class='h-t-n'>
-        <image src='http://e.hiphotos.baidu.com/image/h%3D300/sign=a9e671b9a551f3dedcb2bf64a4eff0ec/4610b912c8fcc3cef70d70409845d688d53f20f7.jpg'></image>
+        <image src="{{userInfo.avatar}}"></image>
         <view>
-            <text></text>
-            <text>答题新秀[您已超过当前 50% 的人]</text>
+            <text>{{userInfo.nickname}}</text>
+            <text>答题新秀[您已超过当前 {{infomata.transcend_ratio}}% 的人]</text>
         </view>
       </view>
       <view class='h-t-f'>
           <view>
-             累计答题:<text>1895</text>
+             累计答题:<text>{{infomata.sum_count}}</text>
           </view>
           <view>
-             正确率:<text>80%</text>
+             正确率:<text>{{infomata.right_ratio}}%</text>
           </view>
           <view>
-             图片识别:<text>1895</text>次
+             图片识别:<text>{{infomata.picture_num}}</text>次
           </view>
           <view>
-             语音识别:<text>1895</text>次
+             语音识别:<text>{{infomata.voice_num}}</text>次
           </view>
       </view>
 
@@ -49,4 +49,6 @@
       </view>
     </view>
   </view>
+        <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class='butn'>一 键 登 录</button>
+
 </view>

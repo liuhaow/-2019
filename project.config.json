@@ -4,16 +4,17 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false
+		"autoAudits": false,
+		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.3",
-	"appid": "wxb9cdd3293b46898a",
+	"appid": "wx0f0cf77e70294e95",
 	"projectname": "garbage",
 	"debugOptions": {
 		"hidedInDevtools": []

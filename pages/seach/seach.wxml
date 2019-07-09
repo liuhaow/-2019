@@ -1,10 +1,10 @@
 <view class='seach'>
   <view class='seach-t'>
-    <image src='../../img/seach.png'></image> <input placeholder='输入'></input>
+    <image src='../../img/seach.png'></image> <input placeholder='输入' value='{{inputd}}'  bindinput="getInput" ></input>
   </view>
   <scroll-view class='listin'>
-      <view wx:for='{{list}}' wx:key='{{index}}'>
-      小龙虾壳［湿垃圾］
+      <view wx:for='{{list}}' wx:key='{{index}}' wx:key='{{index}}'>
+      {{item[i].name}}［{{item.type}}］
       </view>  
   </scroll-view>
 </view>
