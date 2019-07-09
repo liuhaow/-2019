@@ -10,6 +10,96 @@
   background: linear-gradient(0deg, #6e9a46 0%, #8ed365 100%);
 }
 
+.quest-t-m {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+.quest-m {
+  height: 756rpx;
+  width: 636rpx;
+  position: relative;
+  padding-top: 141rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pand {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 636rpx;
+  height: 756rpx;
+  z-index: -1;
+}
+
+.expole {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: bold;
+  color: rgba(110, 120, 163, 1);
+  line-height: 42rpx;
+  margin-bottom: 131rpx
+}
+
+.quest-m >button {
+  width: 453rpx;
+  height: 97rpx;
+  line-height: 97rpx;
+  background: #fff;
+  border: 2rpx solid rgba(128, 194, 105, 1);
+  border-radius: 48rpx;
+  font-size: 30rpx;
+  color: rgba(128, 194, 105, 1);
+  margin-bottom: 110rpx
+}
+.quest-ti{
+  width: 80%;
+  margin-bottom:50rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 64rpx
+}
+.quest-ti view{
+  height: 64rpx;
+  font-size: 30rpx;
+  color: #6E78A3;
+  display: flex;
+  align-items: center
+
+}
+.quest-ti view image{
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 31rpx
+}
+.quest-ti view text{
+  font-size: 36rpx;
+  color: #FFC746;
+  margin-right: 20rpx
+}
+.endover {
+  width: 97rpx;
+  height: 26rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  text-decoration: underline;
+  color: rgba(147, 158, 184, 1);
+  line-height: 42rpx;
+}
+
 .quest-t {
   height: 670rpx;
   position: relative;
@@ -18,8 +108,6 @@
   align-items: center;
   width: 100%;
 }
-
-
 
 .xuanzu {
   width: 710rpx;

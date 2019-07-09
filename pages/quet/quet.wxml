@@ -1,22 +1,62 @@
 <!--pages/quet/quet.wxml-->
 <view class='quest'>
+  <view class='quest-t-m' wx-if='{{sure}}'>
+    <view class='quest-m' wx-if='{{flag == 1}}'>
+      <image class='pand' src='../../img/sur.png'></image>
+      <text class='expole'>用于回收各种废弃金属、金属制品、
+塑料等可回收的垃圾；废弃的易拉罐
+属于可回收垃圾</text>
+      <button>下一题</button>
+      <text class='endover'>结束答题</text>
+    </view>
+    <view class='quest-m' wx-if='{{flag == 2}}'>
+      <image class='pand' src='../../img/wor.png'></image>
+      <text class='expole'>用于回收各种废弃金属、金属制品、
+塑料等可回收的垃圾；废弃的易拉罐
+属于可回收垃圾</text>
+      <button>下一题</button>
+      <text class='endover'>结束答题</text>
+    </view>
+    <view class='quest-m' wx-if='{{flag == 3}}'>
+      <image class='pand' src='../../img/nex.png'></image>
+      <view class='quest-ti'>
+          <view>
+              <image src='../../img/zq.png'></image> 正确答题
+          </view>
+          <view> <text>3</text> 题</view>
+      </view>
+      <view class='quest-ti'>
+          <view>
+              <image src='../../img/gh.png'></image> 正确答题
+          </view>
+          <view> <text>60</text> %</view>
+      </view>
+      <button>继续答题</button>
+      <text class='endover'>结束答题</text>
+    </view>
+  </view>
   <view class='quest-t'>
-    <image class='xuanzu' src='../../img/yuav.png' ></image>
+    <image class='xuanzu' src='../../img/yuav.png'></image>
     <view class='zhaolai'>
       <image src='http://img0.imgtn.bdimg.com/it/u=4060989087,4275809491&fm=26&gp=0.jpg'></image>
     </view>
   </view>
   <view class='dati'>
     <view class='dati-t'>
-      <text>1</text>/5 [初级]</view>
-    <text class='data-laji'>图片上是什么类型的垃圾?</text>
-    <block wx:for='{{list}}' wx:key='{{index}}'>
+      <text>{{index+1}}</text>/5 [初级]</view>
+    <text class='data-laji'>{{list[index].question}}</text>
+    <view wx:for='{{list[index].answers}}' wx:key='{{index}}' data-anser='{{item}}' bindtap='choseInfo'>
+      {{item}}
+      <!-- <image src='../../img/chose.png' wx-if='{{courinde != index}}'></image>
+        <image src='../../img/chosse.png' wx-if='{{courinde == index}}'></image> -->
+    </view>
+    <!-- <block wx:for='{{list}}' wx:key='{{index}}'>
       <view bindtap='onTabsItem' data-index='{{index}}' class='choselist'>
         <image src='../../img/chose.png' wx-if='{{courinde != index}}'></image>
         <image src='../../img/chosse.png' wx-if='{{courinde == index}}'></image>
         {{item.name}}
       </view>
-    </block>
+    </block> -->
   </view>
-  <button class='btnque'>确定</button>
+  <button class='btnque' bindtap='btnque'>确定</button>
 </view>
